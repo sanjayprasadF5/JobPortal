@@ -7,7 +7,7 @@ import morgan from "morgan"
 // file import
 import connectDB from "./config/db.js"
 import testRouter from "./routes/testRoutes.js"
-
+import authRouter from "./routes/authRoutes.js"
 // DOT ENV config
 dotenv.config({ path: "./.env" })
 
@@ -20,6 +20,7 @@ app.use(morgan("dev"))
 
 // routes
 app.use("/api/v1/test", testRouter)
+app.use("/api/v1/auth", authRouter)
 
 // PORT
 const PORT = process.env.PORT || 3000
